@@ -18,3 +18,10 @@ class AssetMarketSuccess extends AssetState {
   final AssetPriceResponse model;
   AssetMarketSuccess({required this.model});
 }
+
+class AllAssetsLoading extends AssetState {}
+
+class AllAssetsSuccess extends AssetState {
+  final AllAssets model;
+  AllAssetsSuccess({required this.model});
+}

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:crypto_calc/Repository/asset_repo.dart';
+import 'package:crypto_calc/models/all_assets.dart';
 import 'package:crypto_calc/models/asset_chart.dart';
 import 'package:crypto_calc/models/asset_response.dart';
 import 'package:meta/meta.dart';
@@ -29,6 +30,12 @@ class AssetBloc extends Bloc<AssetEvent, AssetState> {
         } catch (e) {
           print(e);
         }
+      } else if (event is GetAllAssets) {
+        emit.call(AllAssetsLoading());
+        try {
+          final AllAssets model = await assetRepo.getAllAssets();
+          emit.call(AllAssetsSuccess(model: model));
+        } catch (e) {}
       }
     });
   }
