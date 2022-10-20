@@ -18,7 +18,7 @@ class LineChartWidget extends StatelessWidget {
         minX: 0,
         maxX: 11,
         minY: 0,
-        maxY: 11,
+        maxY: 20,
         gridData: FlGridData(
           show: true,
           getDrawingHorizontalLine: (value) {
@@ -42,7 +42,7 @@ class LineChartWidget extends StatelessWidget {
         lineBarsData: [
           LineChartBarData(
             spots: [
-              FlSpot(0, 1),
+              FlSpot(0, 0),
               FlSpot(2.6, 2),
               FlSpot(4.9, 1),
               FlSpot(6.8, 2),

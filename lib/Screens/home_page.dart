@@ -161,7 +161,7 @@ class _CryptoCalcState extends State<CryptoCalc> {
                         Expanded(
                           child: Center(
                             child: Text(
-                              "${data!.elementAt(0).supply.toString().substring(6, 8)}%",
+                              "${data!.elementAt(0).supply.toString().substring(0, 2)} B",
                               style: TextStyle(
                                   color: Color(0xffd0d1d2), fontSize: 25),
                             ),
@@ -248,15 +248,15 @@ class _CryptoCalcState extends State<CryptoCalc> {
                     primary: false,
                     itemCount: 5,
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: deviceWidth(context) * 0.02,
-                            vertical: deviceHeight(context) * 0.015),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => ChartPage()));
-                          },
+                      return GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ChartPage()));
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: deviceWidth(context) * 0.02,
+                              vertical: deviceHeight(context) * 0.015),
                           child: Row(children: [
                             CircleAvatar(
                                 radius: deviceHeight(context) * 0.04,
