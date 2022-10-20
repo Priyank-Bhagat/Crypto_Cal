@@ -56,7 +56,7 @@ class _CryptoCalcState extends State<CryptoCalc> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor:  Colors.red[700],
+        backgroundColor: Colors.red[700],
         child: FaIcon(
           FontAwesomeIcons.rotate,
           color: const Color(0xff151420),
@@ -101,7 +101,9 @@ class _CryptoCalcState extends State<CryptoCalc> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top:  deviceHeight(context) * 0.05,bottom:  deviceHeight(context) * 0.015),
+                    padding: EdgeInsets.only(
+                        top: deviceHeight(context) * 0.05,
+                        bottom: deviceHeight(context) * 0.015),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -132,7 +134,9 @@ class _CryptoCalcState extends State<CryptoCalc> {
                         ]),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: deviceHeight(context) * 0.018, bottom: deviceHeight(context) * 0.015),
+                    padding: EdgeInsets.only(
+                        top: deviceHeight(context) * 0.018,
+                        bottom: deviceHeight(context) * 0.015),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -239,73 +243,75 @@ class _CryptoCalcState extends State<CryptoCalc> {
                       color: Color(0xffd0d1d2),
                     ),
                   ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChartPage()));
-                    },
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                        primary: false,
-                        itemCount: 5,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: deviceWidth(context) * 0.02,
-                                vertical: deviceHeight(context) * 0.015),
-                            child: Row(children: [
-                              CircleAvatar(
-                                  radius: deviceHeight(context) * 0.04,
-                                  backgroundColor: Color(0xff23222c),
-                                  child: icons.elementAt(index)),
-                              Container(
-                                width: deviceWidth(context) * 0.20,
-                                padding: const EdgeInsets.only(left: 11.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      data.elementAt(index).name.toString(),
-                                      style: TextStyle(
-                                          color: Color(0xffd0d1d2), fontSize: 18),
-                                    ),
-                                    Text(
-                                      data.elementAt(index).symbol.toString(),
-                                      style: TextStyle(
-                                          color: Color(0xff5a5b62), fontSize: 15),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(
-                                width: deviceWidth(context) * 0.37,
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  ListView.builder(
+                    shrinkWrap: true,
+                    primary: false,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: deviceWidth(context) * 0.02,
+                            vertical: deviceHeight(context) * 0.015),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ChartPage()));
+                          },
+                          child: Row(children: [
+                            CircleAvatar(
+                                radius: deviceHeight(context) * 0.04,
+                                backgroundColor: Color(0xff23222c),
+                                child: icons.elementAt(index)),
+                            Container(
+                              width: deviceWidth(context) * 0.20,
+                              padding: const EdgeInsets.only(left: 11.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Text(
-                                    "\$${data.elementAt(index).priceUsd?.substring(0, 7)}",
+                                    data.elementAt(index).name.toString(),
                                     style: TextStyle(
                                         color: Color(0xffd0d1d2), fontSize: 18),
                                   ),
                                   Text(
-                                    '${data.elementAt(index).changePercent24Hr?.substring(0, 5)}%',
+                                    data.elementAt(index).symbol.toString(),
                                     style: TextStyle(
-                                      color: double.parse(data
-                                                  .elementAt(index)
-                                                  .changePercent24Hr!) >=
-                                              0
-                                          ? Color(0xff189f59)
-                                          : Colors.red,
-                                      fontSize: 15,
-                                    ),
+                                        color: Color(0xff5a5b62), fontSize: 15),
                                   ),
                                 ],
-                              )
-                            ]),
-                          );
-                        }),
+                              ),
+                            ),
+                            SizedBox(
+                              width: deviceWidth(context) * 0.37,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Text(
+                                  "\$${data.elementAt(index).priceUsd?.substring(0, 7)}",
+                                  style: TextStyle(
+                                      color: Color(0xffd0d1d2), fontSize: 18),
+                                ),
+                                Text(
+                                  '${data.elementAt(index).changePercent24Hr?.substring(0, 5)}%',
+                                  style: TextStyle(
+                                    color: double.parse(data
+                                                .elementAt(index)
+                                                .changePercent24Hr!) >=
+                                            0
+                                        ? Color(0xff189f59)
+                                        : Colors.red,
+                                    fontSize: 15,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ]),
+                        ),
+                      );
+                    },
                   )
                 ],
               ),
