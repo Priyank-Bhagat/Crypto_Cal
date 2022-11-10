@@ -312,7 +312,8 @@ class _CryptoCalcState extends State<CryptoCalc> {
                         ),
                       );
                     },
-                  )
+                  ),
+
                 ],
               ),
             );

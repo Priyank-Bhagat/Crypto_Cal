@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.crypto_calc">
-   <application
-        android:label="crypto_calc"
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:label="CryptoCalc"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
