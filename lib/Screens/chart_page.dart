@@ -1,14 +1,12 @@
 import 'dart:io';
-
-import 'package:crypto_calc/bloc/asset/asset_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../widget/line_chart_widget.dart';
 
 class ChartPage extends StatefulWidget {
-  String? coinName;
+
+
+ final String? coinName;
 
   ChartPage({this.coinName, super.key});
   @override

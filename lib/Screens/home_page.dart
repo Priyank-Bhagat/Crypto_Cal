@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 import 'package:crypto_calc/Screens/chart_page.dart';
 import 'package:crypto_calc/Screens/size_config.dart';
