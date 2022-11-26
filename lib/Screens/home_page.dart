@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 import 'package:crypto_calc/Screens/chart_page.dart';
+import 'package:crypto_calc/Screens/size_config.dart';
 import 'package:crypto_calc/bloc/asset/asset_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,39 +25,43 @@ class _CryptoCalcState extends State<CryptoCalc> {
     super.initState();
   }
 
-  List<FaIcon> icons = [
-    FaIcon(
-      FontAwesomeIcons.bitcoin,
-      color: const Color(0xfff7a731),
-      size: 30,
-    ),
-    FaIcon(
-      FontAwesomeIcons.ethereum,
-      color: const Color(0xfff7a731),
-      size: 30,
-    ),
-    FaIcon(
-      FontAwesomeIcons.circleDollarToSlot,
-      color: const Color(0xfff7a731),
-      size: 30,
-    ),
-    FaIcon(
-      FontAwesomeIcons.b,
-      color: const Color(0xfff7a731),
-      size: 30,
-    ),
-    FaIcon(
-      FontAwesomeIcons.dollarSign,
-      color: const Color(0xfff7a731),
-      size: 30,
-    ),
-  ];
 
   double deviceWidth(BuildContext context) => MediaQuery.of(context).size.width;
   double deviceHeight(BuildContext context) =>
       MediaQuery.of(context).size.height;
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
+    List<FaIcon> icons = [
+      FaIcon(
+        FontAwesomeIcons.bitcoin,
+        color: const Color(0xfff7a731),
+        size: SizeConfig.blockSizeVertical * 4.9,
+      ),
+      FaIcon(
+        FontAwesomeIcons.ethereum,
+        color: const Color(0xfff7a731),
+        size:  SizeConfig.blockSizeVertical * 4.9,
+      ),
+      FaIcon(
+        FontAwesomeIcons.circleDollarToSlot,
+        color: const Color(0xfff7a731),
+        size:  SizeConfig.blockSizeVertical * 4.9,
+      ),
+      FaIcon(
+        FontAwesomeIcons.b,
+        color: const Color(0xfff7a731),
+        size:  SizeConfig.blockSizeVertical * 4.9,
+      ),
+      FaIcon(
+        FontAwesomeIcons.dollarSign,
+        color: const Color(0xfff7a731),
+        size:  SizeConfig.blockSizeVertical * 4.9,
+      ),
+    ];
+
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -273,7 +278,7 @@ class _CryptoCalcState extends State<CryptoCalc> {
                                 backgroundColor: Color(0xff23222c),
                                 child: icons.elementAt(index)),
                             Container(
-                              width: deviceWidth(context) * 0.20,
+                              width: deviceWidth(context) * 0.25,
                               padding: const EdgeInsets.only(left: 11.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
