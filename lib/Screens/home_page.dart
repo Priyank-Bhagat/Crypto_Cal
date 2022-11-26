@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:crypto_calc/Screens/chart_page.dart';
 import 'package:crypto_calc/bloc/asset/asset_bloc.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class CryptoCalc extends StatefulWidget {
   const CryptoCalc({Key? key}) : super(key: key);
@@ -16,6 +18,8 @@ class CryptoCalc extends StatefulWidget {
 class _CryptoCalcState extends State<CryptoCalc> {
   @override
   void initState() {
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
+
     BlocProvider.of<AssetBloc>(context).add(GetAllAssets());
     super.initState();
   }
@@ -24,22 +28,22 @@ class _CryptoCalcState extends State<CryptoCalc> {
     FaIcon(
       FontAwesomeIcons.bitcoin,
       color: const Color(0xfff7a731),
-      size: 50,
+      size: 30,
     ),
     FaIcon(
       FontAwesomeIcons.ethereum,
       color: const Color(0xfff7a731),
-      size: 50,
+      size: 30,
     ),
     FaIcon(
       FontAwesomeIcons.circleDollarToSlot,
       color: const Color(0xfff7a731),
-      size: 50,
+      size: 30,
     ),
     FaIcon(
       FontAwesomeIcons.b,
       color: const Color(0xfff7a731),
-      size: 50,
+      size: 30,
     ),
     FaIcon(
       FontAwesomeIcons.dollarSign,
@@ -55,7 +59,9 @@ class _CryptoCalcState extends State<CryptoCalc> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          BlocProvider.of<AssetBloc>(context).add(GetAllAssets());
+        },
         backgroundColor: Colors.red[700],
         child: FaIcon(
           FontAwesomeIcons.rotate,
@@ -249,9 +255,13 @@ class _CryptoCalcState extends State<CryptoCalc> {
                     itemCount: 5,
                     itemBuilder: (context, index) {
                       return GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ChartPage()));
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ChartPage(
+                                        coinName: data.elementAt(index).id,
+                                      )));
                         },
                         child: Padding(
                           padding: EdgeInsets.symmetric(
@@ -313,7 +323,6 @@ class _CryptoCalcState extends State<CryptoCalc> {
                       );
                     },
                   ),
-
                 ],
               ),
             );
