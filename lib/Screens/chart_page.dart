@@ -31,10 +31,12 @@ class _ChartPageState extends State<ChartPage> {
   }
 
   @override
-  Widget build(BuildContext context) => WebView(
-        initialUrl: "https://coinbase.com/price/${widget.coinName}",
-        javascriptMode: JavascriptMode.unrestricted,
-      );
+  Widget build(BuildContext context) => SafeArea(
+    child: WebView(
+          initialUrl: "https://coinbase.com/price/${widget.coinName}",
+          javascriptMode: JavascriptMode.unrestricted,
+        ),
+  );
   //  Card(
   //       elevation: 4,
   //       shape: RoundedRectangleBorder(
