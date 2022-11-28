@@ -1,17 +1,23 @@
 import 'package:crypto_calc/Repository/asset_repo.dart';
 import 'package:crypto_calc/bloc/asset/asset_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-
-import 'Screens/chart_page.dart';
 import 'Screens/home_page.dart';
 
-void main() => runApp(
-      const MaterialApp(
-        home: MyApp(),
-      ),
-    );
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(
+    const MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
