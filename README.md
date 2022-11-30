@@ -1,6 +1,6 @@
 # crypto_calc
 
-A new Flutter project.
+A new Flutter.
 
 ## Getting Started
 
