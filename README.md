@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/115228605/204976097-c13a2454-b633-4fd8-bd9e-f9da1f2e368f.png" alt="something was here🤔">
+</p>
+
 # crypto_calc
 
 CryptoCalc is an app that gets you the latest prices and flow of crypto currency💸.
@@ -7,7 +11,10 @@ CryptoCalc is an app that gets you the latest prices and flow of crypto currency
 Users can open the app directly and view the currency price and 24h up⬆️/low⬇️ and other info too on the main page of the screen.
 
 
--image-
+
+<p> 
+    <img width="250" src="https://user-images.githubusercontent.com/115228605/204976244-30c28422-6f02-48a8-8cc3-6c75270414ce.jpeg" alt="something was here🤔">
+</p>
 
 
 Users can also see the cryptocurrency price from the previous month by just clicking🖱️ on the currency logo/name.
@@ -16,7 +23,9 @@ Users can also see the cryptocurrency price from the previous month by just clic
 
 The App auto updates the latest price 👾, but for user convenience, we implemented a refresh button to update prices manually.
 
--image-
+<p> 
+    <img width="250" src="https://user-images.githubusercontent.com/115228605/204976432-1aae081d-1835-4ee5-a0b1-a2c9693ec2c7.gif" alt="something was here🤔">
+</p>
 
 
 👉[Download ](--appLink--)👈 The CryptoCalc App.
