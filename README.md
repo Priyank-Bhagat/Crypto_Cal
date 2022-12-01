@@ -17,9 +17,14 @@ Users can open the app directly and view the currency price and 24h up⬆️/low
 </p>
 
 
-Users can also see the cryptocurrency price from the previous month by just clicking🖱️ on the currency logo/name.
+Users can also see the cryptocurrency price from the previous month by just clicking🖱️ on the currency logo/name. we implemented web view .
 
--image-
+
+<p> 
+    <img width="250" src="https://user-images.githubusercontent.com/115228605/204978288-85e1c395-da05-41b0-9b8d-75b26de3b862.gif" alt="something was here🤔">
+</p>
+
+
 
 The App auto updates the latest price 👾, but for user convenience, we implemented a refresh button to update prices manually.
 
@@ -28,7 +33,7 @@ The App auto updates the latest price 👾, but for user convenience, we impleme
 </p>
 
 
-👉[Download ](--appLink--)👈 The CryptoCalc App.
+👉[Download ](https://github.com/Priyank-Bhagat/Crypto_Cal/raw/master/test/build/crypTo.apk)👈 The CryptoCalc App.
 
 ## Getting Started
 
