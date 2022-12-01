@@ -8,7 +8,7 @@ CryptoCalc is an app that gets you the latest prices and flow of crypto currency
 
 ## Demo
 
-Users can open the app directly and view the currency price and 24h up⬆️/low⬇️ and other info too on the main page of the screen.
+Users can open the app directly and view the currency price and 24h high⬆️/low⬇️ and other info too on the main page of the screen.
 
 
 
