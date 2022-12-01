@@ -17,7 +17,7 @@ Users can open the app directly and view the currency price and 24h up⬆️/low
 </p>
 
 
-Users can also see the cryptocurrency price from the previous month by just clicking🖱️ on the currency logo/name. we implemented web view .
+Users can also see the cryptocurrency price from the previous month by just clicking🖱️ on the currency logo/name. We used WebView to show graphs and historic data.
 
 
 <p> 
